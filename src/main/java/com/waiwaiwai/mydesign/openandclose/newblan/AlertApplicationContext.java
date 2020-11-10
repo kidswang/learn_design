@@ -4,7 +4,7 @@ import com.waiwaiwai.mydesign.openandclose.common.Notification;
 import com.waiwaiwai.mydesign.openandclose.newblan.handler.ErrorAlertHandler;
 import com.waiwaiwai.mydesign.openandclose.newblan.handler.TimeoutAlertHandler;
 import com.waiwaiwai.mydesign.openandclose.newblan.handler.TpsAlertHandler;
-import com.waiwaiwai.mydesign.openandclose.oldblan.AlertRule;
+import com.waiwaiwai.mydesign.openandclose.common.AlertRule;
 
 /**
  * @Author: wangzhenglei

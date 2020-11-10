@@ -1,7 +1,6 @@
 package com.waiwaiwai.mydesign.openandclose.newblan;
 
 import com.waiwaiwai.mydesign.openandclose.newblan.handler.AlertHandler;
-import com.waiwaiwai.mydesign.openandclose.oldblan.AlertRule;
 
 import java.util.ArrayList;
 import java.util.List;

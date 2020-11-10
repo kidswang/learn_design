@@ -1,5 +1,6 @@
 package com.waiwaiwai.mydesign.openandclose.oldblan;
 
+import com.waiwaiwai.mydesign.openandclose.common.AlertRule;
 import com.waiwaiwai.mydesign.openandclose.common.Notification;
 import com.waiwaiwai.mydesign.openandclose.common.NotificationEmergencyLevel;
 

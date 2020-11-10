@@ -2,7 +2,7 @@ package com.waiwaiwai.mydesign.openandclose.newblan.handler;
 
 import com.waiwaiwai.mydesign.openandclose.common.Notification;
 import com.waiwaiwai.mydesign.openandclose.newblan.ApiStatInfo;
-import com.waiwaiwai.mydesign.openandclose.oldblan.AlertRule;
+import com.waiwaiwai.mydesign.openandclose.common.AlertRule;
 
 /**
  * @Author: wangzhenglei

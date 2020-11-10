@@ -1,4 +1,4 @@
-package com.waiwaiwai.mydesign.openandclose.oldblan;
+package com.waiwaiwai.mydesign.openandclose.common;
 
 import com.waiwaiwai.mydesign.openandclose.common.Rule;
 
