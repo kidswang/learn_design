@@ -17,6 +17,9 @@ public class AlertApplicationContext {
     private Notification notification;
     private NewAlert alert;
 
+
+
+
     public void initializeBeans() {
         alertRule = new AlertRule();
         notification = new Notification();
