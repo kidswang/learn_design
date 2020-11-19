@@ -100,7 +100,30 @@ public class AlertRule {
     public void test3() {
 
     }
+    @Test
+    public void test5() {
+        List<Person> list = new ArrayList<>();
+        Person p1 = new Person();
+        p1.setId("qw");
+        p1.setGradeId("er");
 
+        Person p2 = new Person();
+        p2.setId("zx");
+        p2.setGradeId("er");
+
+        Person p3 = new Person();
+        p3.setId("cv");
+        p3.setGradeId("er");
+        list.add(p1);
+        list.add(p2);
+        list.add(p3);
+        list.stream().forEach(item -> {
+            item.setId("qweqwe");
+        });
+
+        System.out.println(list);
+
+    }
 
 
 }
