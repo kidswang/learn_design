@@ -5,6 +5,10 @@ import com.waiwaiwai.mydesign.openandclose.newblan.handler.ErrorAlertHandler;
 import com.waiwaiwai.mydesign.openandclose.newblan.handler.TimeoutAlertHandler;
 import com.waiwaiwai.mydesign.openandclose.newblan.handler.TpsAlertHandler;
 import com.waiwaiwai.mydesign.openandclose.common.AlertRule;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author: wangzhenglei
@@ -58,5 +62,7 @@ public class AlertApplicationContext {
         AlertApplicationContext instance = AlertApplicationContext.getInstance();
         instance.getAlert().check(apiStatInfo);
     }
+
+
 
 }
