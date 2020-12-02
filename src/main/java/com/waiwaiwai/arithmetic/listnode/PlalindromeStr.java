@@ -1,9 +1,6 @@
-package com.waiwaiwai.arithmetic;
+package com.waiwaiwai.arithmetic.listnode;
 
 import org.springframework.util.StringUtils;
-import org.w3c.dom.Node;
-
-import java.util.List;
 
 /**
  * 查询是否是回文字符串
