@@ -3,7 +3,7 @@ package com.waiwaiwai.arithmetic.listnode;
 /**
  * @Author: wangzhenglei
  * @DateTime: 2020/12/2 15:26
- * @Description: 自定义一个栈
+ * @Description: 自定义一个链表栈
  */
 public class MyStack {
 

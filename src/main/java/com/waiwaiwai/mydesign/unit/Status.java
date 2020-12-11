@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class Status {
     public static String EXECUTED = "";
     public static String TO_BE_EXECUTE = "";

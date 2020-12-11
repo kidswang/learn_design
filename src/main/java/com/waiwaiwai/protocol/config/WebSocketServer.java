@@ -30,9 +30,11 @@ public class WebSocketServer {
     // 也可以统计用户的连接数
     @OnOpen
     public void onOpen(@PathParam("userId") String userId, Session session) throws IOException {
+        System.out.println(this);
         if (!clients.containsKey(userId)) {
             clients.put(userId, session);
         }
+//        clientPut(session, userId);
         ArrayList<String> keyList = new ArrayList<>();
         for (String key : clients.keySet()) {
             keyList.add(key);
@@ -40,6 +42,11 @@ public class WebSocketServer {
         logger.info("在线人数为：" + keyList.size());
         sendInfo("message", userId);
     }
+
+//    private void clientPut(Session session, String userId) {
+//        System.out.println(this);
+//        clients.put(userId,session);
+//    }
 
 
     @OnMessage
