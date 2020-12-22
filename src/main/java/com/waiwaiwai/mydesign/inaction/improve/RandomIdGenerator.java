@@ -1,6 +1,7 @@
 package com.waiwaiwai.mydesign.inaction.improve;
 
 import com.google.common.annotations.VisibleForTesting;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,27 +14,35 @@ public class RandomIdGenerator implements LogTraceIdGenerator {
 
     @Override
     public String generate() {
-        String hostName = getLastFiledOfHostName();
+        String hostName = null;
+        try {
+            hostName = getLastFiledOfHostName();
+        } catch (UnknownHostException e) {
+            logger.warn("Failed to get the host name {}", e);
+            throw new RuntimeException();
+        }
         long currentTimeMillis = System.currentTimeMillis();
         String randomAlphameric = generateRandomAlphameric(8);
         String id = String.format("%s-%d-%s", hostName, currentTimeMillis, randomAlphameric);
         return id;
     }
 
-    private String getLastFiledOfHostName() {
+    private String getLastFiledOfHostName() throws UnknownHostException {
         String subStrOfHostName = "";
         try {
             String hostName = InetAddress.getLocalHost().getHostName();
             subStrOfHostName = getLastSubStrSplitByDot(hostName);
         } catch (UnknownHostException e) {
-            logger.warn("Failed to get the host name", e);
-            e.printStackTrace();
+            throw new UnknownHostException("...");
         }
         return subStrOfHostName;
     }
 
     @VisibleForTesting
-    protected String getLastSubStrSplitByDot(String hostName) {
+    protected String getLastSubStrSplitByDot(String hostName) throws UnknownHostException {
+        if (hostName == null || hostName.isEmpty()) {
+            throw new UnknownHostException("...");
+        }
         String[] tokens = hostName.split("\\.");
         String subStrOfHostName = tokens[tokens.length - 1];
         return subStrOfHostName;
@@ -41,6 +50,9 @@ public class RandomIdGenerator implements LogTraceIdGenerator {
 
     @VisibleForTesting
     protected String generateRandomAlphameric(int length) {
+        if (length <= 0) {
+            throw new IllegalArgumentException("...");
+        }
         char[] randomChars = new char[length];
         Random random = new Random();
         int count = 0;

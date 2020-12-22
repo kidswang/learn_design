@@ -1,7 +1,10 @@
 package com.waiwaiwai.mydesign.prjaction1.improve;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Author: wangzhenglei
@@ -11,6 +14,7 @@ import java.util.List;
 public class Aggregator {
 
     public static RequestStat aggregate(List<RequestInfo> requestInfos, long durationInMillis) {
+
         double maxRespTime = Double.MIN_VALUE;
         double minRespTime = Double.MAX_VALUE;
         double avgRespTime = -1;
@@ -34,7 +38,8 @@ public class Aggregator {
             avgRespTime = sumRespTime / count;
         }
         long tps = (count / durationInMillis * 1000);
-        Collections.sort(requestInfos, (o1, o2) -> {
+
+        requestInfos.sort((o1, o2) -> {
             double diff = o1.getResponseTime() - o2.getResponseTime();
             if (diff > 0.0) {
                 return -1;
@@ -44,6 +49,12 @@ public class Aggregator {
                 return 0;
             }
         });
+        if (count != 0) {
+            int idx999 = (int) (count * 0.999);
+            int idx99 = (int) (count * 0.99);
+            p999RespTime = requestInfos.get(idx999).getResponseTime();
+            p99RespTime = requestInfos.get(idx99).getResponseTime();
+        }
         RequestStat requestStat = new RequestStat();
         requestStat.setMaxResponseTime(maxRespTime);
         requestStat.setMinResponseTime(minRespTime);

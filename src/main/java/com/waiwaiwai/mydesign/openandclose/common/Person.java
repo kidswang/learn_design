@@ -1,7 +1,9 @@
 package com.waiwaiwai.mydesign.openandclose.common;
 
 import lombok.Data;
+import lombok.ToString;
 
+@ToString
 @Data
 public class Person {
 
