@@ -5,7 +5,6 @@ import com.waiwaiwai.mydesign.proxy.UserController;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
-import java.util.Objects;
 
 /**
  * @Author: wangzhenglei
@@ -13,6 +12,7 @@ import java.util.Objects;
  * @Description: 动态代理类
  */
 public class MetricsCollectorProxy {
+
     private MetricsCollector metricsCollector;
 
     public MetricsCollectorProxy() {
@@ -29,7 +29,8 @@ public class MetricsCollectorProxy {
     @Test
     public void test() {
         MetricsCollectorProxy metricsCollectorProxy = new MetricsCollectorProxy();
-        IUserController userController = (UserController) metricsCollectorProxy.createProxy(new UserController());
+        IUserController userController = (IUserController) metricsCollectorProxy.createProxy(new UserController());
+        userController.login("123", "fsfs");
     }
 
 }

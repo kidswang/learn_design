@@ -22,9 +22,13 @@ public class DynamicProxyHandler implements InvocationHandler {
         long endTimeStamp = System.currentTimeMillis();
         long responseTime = endTimeStamp - startTimestamp;
         String apiName = proxiedObject.getClass().getName() + ":" + method.getName();
+        Class<?> returnType = method.getReturnType();
+        System.out.println(returnType.getName());
+        System.out.println(apiName);
         RequestInfo requestInfo = new RequestInfo(apiName, responseTime, startTimestamp);
-        MetricsCollector metricsCollector = null;
+        MetricsCollector metricsCollector = new MetricsCollector();
         metricsCollector.recordRequest(requestInfo);
+        System.out.println("jin lai le");
         return result;
     }
 }

@@ -3,6 +3,8 @@ package com.waiwaiwai.mydesign.inaction.improve;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.net.UnknownHostException;
+
 public class RandomIdGeneratorTest {
 
     @Test
@@ -13,7 +15,7 @@ public class RandomIdGeneratorTest {
     }
 
     @Test
-    public void testGetLastSubstrSplitByDot() {
+    public void testGetLastSubstrSplitByDot() throws UnknownHostException {
         RandomIdGenerator idGenerator = new RandomIdGenerator();
         String actualSubstr = idGenerator.getLastSubStrSplitByDot("field1.field2.field3");
         Assert.assertEquals("field3", actualSubstr);
