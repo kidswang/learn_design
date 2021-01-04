@@ -4,4 +4,35 @@ server:
 spring:
   main:
     lazy-initialization: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://121.40.232.47:3306/smartcafeteria?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.0.142:3306/smart?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 5
+      connection-test-query: SELECT 1 FROM DUAL
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: template
+      max-lifetime: 60000
+      connection-timeout: 30000
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
 
+mybatis-plus:
+  configuration:
+    mapper-locations: classpath*:mapper/*.xml
+    #mybatis plus 结果映射下划线转驼峰
+    map-underscore-to-camel-case: false
+    #返回值为空也显示字段名
+    call-setters-on-nulls: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.ciyun.smartcafeteria.mapper: debug

@@ -2,8 +2,66 @@ package com.domain;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ForkJoinPool;
+import java.util.stream.Collectors;
+
 public class TotalTest {
 
+
+    /**
+     * 测试
+     */
+    @Test
+    public void test8() {
+        ForkJoinPool pool = new ForkJoinPool(5);
+        pool.submit(() -> System.out.println("ssss"));
+        List<String> list = new ArrayList<>();
+        list.add("1123");
+        list.add("1123123");
+        list.add("1123445");
+        list.add("1123876");
+        list.add("1123876");
+        List<String> collect = list.parallelStream().map(s -> {
+            System.out.println(Thread.currentThread().getName());
+            return s + "df";
+        }).collect(Collectors.toList());
+
+        System.out.println("================================");
+        pool.submit(() -> list.parallelStream().forEach(s -> {
+            System.out.println(Thread.currentThread().getName());
+        })).join();
+    }
+
+    /**
+     * 测试数字大写
+     */
+    @Test
+    public void test7() {
+        int x = 0x7fffffff; // 21
+        // 4
+        System.out.println(x);
+        String pp = System.getProperty
+                ("java.util.concurrent.ForkJoinPool.common.parallelism");
+        String fp = System.getProperty
+                ("java.util.concurrent.ForkJoinPool.common.threadFactory");
+        String hp = System.getProperty
+                ("java.util.concurrent.ForkJoinPool.common.exceptionHandler");
+
+        System.out.println(pp);
+        System.out.println(fp);
+        System.out.println(hp);
+
+    }
+    @Test
+    public void test6() {
+        int end = 4;
+        int start = 1;
+        int mid = (end - start) / 2 + start;
+        System.out.println(mid);
+
+    }
 
     @Test
     public void test5() {
