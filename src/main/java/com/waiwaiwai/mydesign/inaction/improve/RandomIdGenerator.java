@@ -1,7 +1,6 @@
 package com.waiwaiwai.mydesign.inaction.improve;
 
 import com.google.common.annotations.VisibleForTesting;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

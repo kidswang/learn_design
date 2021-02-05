@@ -1,13 +1,123 @@
 package com.domain;
 
 import org.junit.Test;
+import org.yaml.snakeyaml.util.UriEncoder;
 
+import java.io.UnsupportedEncodingException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 
 public class TotalTest {
+
+    private final String SSs = "这是%s,只是%s";
+
+
+    @Test
+    public void test15() {
+        System.out.println(LocalDateTime.now());
+        System.out.println(LocalDateTime.now().plusSeconds(1));
+
+//        String format = String.format(SSs, "零", "壹");
+//        System.out.println(format);
+
+//        String str = "http://27.221.57.109:9000/equmanagement/2021/1/12/123_1610336057951.docx";
+//        String[] split = str.split("\\.");
+//        System.out.println(split[split.length - 1]);
+
+    }
+
+    @Test
+    public void test14() {
+        String s1 = "1";
+        String s2 = "12";
+
+        System.out.println(s1.matches("^\\d$"));
+        System.out.println(s2.matches("^\\d$"));
+
+
+
+//        String str = "\nfsdljl\ndocx";
+//        if (str.startsWith("\n")) {
+//            String replace = str.replaceFirst("\n", "");
+//            System.out.println(replace);
+//        String[] split = replace.split("\n");
+//        System.out.println(split.length);
+//        }
+//        System.out.println(str.contains(".doc"));
+
+//        System.out.println(str.lastIndexOf(".docx"));
+    }
+
+
+    @Test
+    public void test13() throws UnsupportedEncodingException {
+
+        System.out.println("");
+        String str = "admin@山东省青岛第六中学";
+        String encode1 = UriEncoder.encode(str); // admin@%E5%B1%B1%E4%B8%9C%E7%9C%81%E9%9D%92%E5%B2%9B%E7%AC%AC%E5%85%AD%E4%B8%AD%E5%AD%A6
+
+        System.out.println(encode1);
+
+//        String encodeUserId = URLEncoder.encode(str, "utf-8"); //admin%40%E5%B1%B1%E4%B8%9C%E7%9C%81%E9%9D%92%E5%B2%9B%E7%AC%AC%E5%85%AD%E4%B8%AD%E5%AD%A6
+//        String decode1 = URLDecoder.decode(str, "utf-8");
+//        System.out.println(encodeUserId);
+//        System.out.println(decode1);
+//        String decode = URLDecoder.decode(encodeUserId, "utf-8");
+//        System.out.println(decode);
+//        String encode = URLEncoder.encode(str, "utf-8");
+//        System.out.println(encode);
+//        String[] split = str.split("\n");
+//        System.out.println(split[0]);
+//        System.out.println(split[1]);
+
+    }
+
+    @Test
+    public void test12() throws NoSuchFieldException, IllegalAccessException {
+        int oldCapacity = 16;
+        int newCapacity = oldCapacity + (oldCapacity >> 1);
+        System.out.println(newCapacity);
+//        String s1 = "helloworld";
+//        Field valueArray = String.class.getDeclaredField("value");
+//        valueArray.setAccessible(true);
+//        char[] array = (char[]) valueArray.get(s1);
+//        array[0] = 'e';
+//        System.out.println(s1);
+    }
+
+    @Test
+    public void test11() {
+        String s1 = "helloworld";
+        String s2 = "helloworld";
+        String s3 = "hello" + "world";
+        String s4 = "hello";
+        String s5 = "world";
+        String s6 = s4 + s5;
+
+        System.out.println(s1 == s2); // true
+        System.out.println(s2 == s3); // true
+        System.out.println(s3 == s6); // false
+    }
+
+    @Test
+    public void test10() {
+        String s1 = new String("qwe");
+        String s2 = "qwe";
+        String s3 = "qwe";
+        System.out.println(s1 == s2);
+        System.out.println(s3 == s2);
+    }
+
+    @Test
+    public void test9() {
+        String integerCacheHighPropValue =
+                sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
+        int i = Integer.parseInt(integerCacheHighPropValue);
+        System.out.println(i);
+    }
 
 
     /**
@@ -54,6 +164,7 @@ public class TotalTest {
         System.out.println(hp);
 
     }
+
     @Test
     public void test6() {
         int end = 4;

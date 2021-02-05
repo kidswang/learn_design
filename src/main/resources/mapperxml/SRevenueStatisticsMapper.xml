@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.SRevenueStatisticsMapper">
+  <resultMap id="BaseResultMap" type="com.domain.SRevenueStatistics">
+    <!--@mbg.generated-->
+    <!--@Table smart.s_revenue_statistics-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="directCost" jdbcType="DECIMAL" property="directCost" />
+    <result column="studentMealCount" jdbcType="INTEGER" property="studentMealCount" />
+    <result column="studentMealPay" jdbcType="DECIMAL" property="studentMealPay" />
+    <result column="teacherMealCount" jdbcType="INTEGER" property="teacherMealCount" />
+    <result column="teacherMealPay" jdbcType="DECIMAL" property="teacherMealPay" />
+    <result column="othersMealCount" jdbcType="INTEGER" property="teacherMealPay" />
+    <result column="othersMealPay" jdbcType="DECIMAL" property="othersMealPay" />
+    <result column="shopManagerCount" jdbcType="INTEGER" property="shopManagerCount" />
+    <result column="shopManagerCost" jdbcType="DECIMAL" property="shopManagerCost" />
+    <result column="headChefCount" jdbcType="INTEGER" property="headChefCount" />
+    <result column="headChefCost" jdbcType="DECIMAL" property="headChefCost" />
+    <result column="chefCount" jdbcType="INTEGER" property="chefCount" />
+    <result column="chefCost" jdbcType="DECIMAL" property="chefCost" />
+    <result column="pastryCookCount" jdbcType="INTEGER" property="pastryCookCount" />
+    <result column="pastryCookCost" jdbcType="DECIMAL" property="pastryCookCost" />
+    <result column="othersEmployeeCount" jdbcType="INTEGER" property="othersEmployeeCount" />
+    <result column="othersEmployeeCost" jdbcType="DECIMAL" property="othersEmployeeCost" />
+    <result column="cerealsCost" jdbcType="DECIMAL" property="cerealsCost" />
+    <result column="peanutOilCost" jdbcType="DECIMAL" property="peanutOilCost" />
+    <result column="flavourCost" jdbcType="DECIMAL" property="flavourCost" />
+    <result column="yogurtCost" jdbcType="DECIMAL" property="yogurtCost" />
+    <result column="vegetablesCost" jdbcType="DECIMAL" property="vegetablesCost" />
+    <result column="meatCost" jdbcType="DECIMAL" property="meatCost" />
+    <result column="eggCost" jdbcType="DECIMAL" property="eggCost" />
+    <result column="seafoodCost" jdbcType="DECIMAL" property="seafoodCost" />
+    <result column="fruitCost" jdbcType="DECIMAL" property="fruitCost" />
+    <result column="othersIngredientCost" jdbcType="DECIMAL" property="othersIngredientCost" />
+    <result column="equipmentCharge" jdbcType="DECIMAL" property="equipmentCharge" />
+    <result column="gasCharge" jdbcType="DECIMAL" property="gasCharge" />
+    <result column="waterCharge" jdbcType="DECIMAL" property="waterCharge" />
+    <result column="electricCharge" jdbcType="DECIMAL" property="electricCharge" />
+    <result column="serviceManagerCost" jdbcType="DECIMAL" property="serviceManagerCost" />
+    <result column="technologyManagerCost" jdbcType="DECIMAL" property="technologyManagerCost" />
+    <result column="othersManagerCost" jdbcType="DECIMAL" property="othersManagerCost" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, directCost, studentMealCount, studentMealPay, teacherMealCount, teacherMealPay, 
+    othersMealCount, othersMealPay, shopManagerCount, shopManagerCost, headChefCount, 
+    headChefCost, chefCount, chefCost, pastryCookCount, pastryCookCost, othersEmployeeCount, 
+    othersEmployeeCost, cerealsCost, peanutOilCost, flavourCost, yogurtCost, vegetablesCost, 
+    meatCost, eggCost, seafoodCost, fruitCost, othersIngredientCost, equipmentCharge, 
+    gasCharge, waterCharge, electricCharge, serviceManagerCost, technologyManagerCost, 
+    othersManagerCost
+  </sql>
+</mapper>
