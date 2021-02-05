@@ -25,7 +25,7 @@ public class GroupChatClient {
 
     public GroupChatClient() {
         try {
-            this.selector = Selector.open(); // 因为这个方法是静态的 所以得到的 selector 是同一个
+            this.selector = Selector.open();
             socketChannel = SocketChannel.open(new InetSocketAddress(HOST ,PORT));
             socketChannel.configureBlocking(false);
             socketChannel.register(this.selector, SelectionKey.OP_READ);
@@ -92,7 +92,9 @@ public class GroupChatClient {
 
         // 写入数据
         Scanner scanner = new Scanner(System.in);
-        groupChatClient.sendInfo(scanner.nextLine());
+        while (scanner.hasNextLine()) {
+            groupChatClient.sendInfo(scanner.nextLine());
+        }
 
     }
 
